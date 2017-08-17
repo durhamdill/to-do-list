@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>To Do List</title>
+  </head>
+  <body>
+
+    <form class="" action="/todo/" method="post">
+      <label for="addTask">Add Your To Do List Tasks:</label>
+      <input type="text" name="addTask" value="">
+      <button type="submit" name="button">Add Task</button>
+    </form>
+
+    <div class="">
+      <ul>
+        {{#showList}}
+        <input type="checkbox" class="task" name="" value=""/>{{.}}<br />
+        {{/showList}}
+      </ul>
+    </div>
+
+  </body>
+</html>
