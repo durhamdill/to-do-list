@@ -8,10 +8,13 @@ const toDoList = ["wash car"];
 const app = express();
 
 app.engine('mustache', mustacheExpress());
+app.engine('js', mustacheExpress());
 app.set('views', './views')
 app.set('view engine', 'mustache')
 
-app.use(bodyParser.json());
+app.use(express.static(__dirname + '/public'));
+
+// app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.text());
 
@@ -25,8 +28,6 @@ app.post('/todo/', function(req, res){
   res.redirect('/todo/');
 });
 
-let task = document.getElementsByClassName("task");
-console.log(task);
 
 app.listen(3000, function () {
   console.log('Successfully started express application!')
